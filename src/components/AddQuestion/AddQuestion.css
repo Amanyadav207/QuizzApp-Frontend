@@ -1,0 +1,39 @@
+/* src/components/AddQuestion/AddQuestion.css */
+.add-question-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.option-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.checkbox-label {
+  margin-left: 10px;
+}
+
+.button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #357abd;
+}

@@ -1,0 +1,55 @@
+.app {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  box-shadow: var(--shadow-light);
+  background-color: var(--background-light);
+  border-radius: 12px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-theme .app {
+  background-color: var(--background-dark);
+  box-shadow: var(--shadow-dark);
+}
+
+.home {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.home h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.home p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+body.dark-theme .home h1 {
+  color: var(--primary-dark);
+}
+
+button.start-quiz {
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.start-quiz:hover {
+  background-color: var(--secondary-color);
+}
+
+body.dark-theme button.start-quiz {
+  background-color: var(--primary-dark);
+}
+
+button.start-quiz:hover {
+  background-color: var(--secondary-dark);
+}

@@ -1,0 +1,33 @@
+.topic-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background-color: var(--card-light);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+  }
+  
+  .topic-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-light);
+    color: white;
+  }
+  
+  body.dark-theme .topic-button {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-dark);
+  }
+  
+  body.dark-theme .topic-button:hover {
+    background-color: var(--primary-dark);
+    color: white;
+  }
+  

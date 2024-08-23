@@ -1,0 +1,41 @@
+.performance-summary {
+  text-align: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+}
+
+body.dark-theme .summary-content {
+  background-color: rgba(26, 31, 46, 0.9);
+}
+
+.performance-summary h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--primary-dark);
+}
+
+.score {
+  font-size: 4em;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+body.dark-theme .performance-summary h2,
+body.dark-theme .score,
+body.dark-theme .score-details {
+  color: var(--text-dark);
+}
