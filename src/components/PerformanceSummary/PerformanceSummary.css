@@ -1,6 +1,6 @@
 .performance-summary {
   text-align: center;
-  padding: 60px 0;
+  padding:  0;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   min-height: 100vh;
   display: flex;
@@ -27,6 +27,10 @@ body.dark-theme .summary-content {
   color: var(--primary-dark);
 }
 
+body.dark-theme .performance-summary h2 {
+  color: var(--text-dark);
+}
+
 .score {
   font-size: 4em;
   font-weight: 700;
@@ -34,8 +38,35 @@ body.dark-theme .summary-content {
   margin-bottom: 20px;
 }
 
-body.dark-theme .performance-summary h2,
-body.dark-theme .score,
+.score-details {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: var(--text-light);
+}
+
 body.dark-theme .score-details {
   color: var(--text-dark);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button.action {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+button.action:hover {
+  background-color: var(--secondary-color);
+}
+
+body.dark-theme button.action {
+  background-color: var(--primary-dark);
+}
+
+body.dark-theme button.action:hover {
+  background-color: var(--secondary-dark);
 }

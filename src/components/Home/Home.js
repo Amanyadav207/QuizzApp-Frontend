@@ -13,7 +13,8 @@ function Home() {
       <div className="home-content">
         <h1>Welcome to QuizMaster</h1>
         <p>Challenge yourself with our diverse range of quizzes. Learn, compete, and have fun!</p>
-        <div className="button-container">
+        
+        <div className="button-container1">
           <Link to="/topics" className="button primary">Start Quiz</Link>
           <Link to="/add-question" className="button secondary">Add Question</Link>
         </div>

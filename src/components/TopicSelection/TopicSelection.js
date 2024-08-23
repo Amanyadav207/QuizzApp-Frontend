@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ThemeContext from '../../contexts/ThemeContext';
 import './TopicSelection.css';
-// import '../../styles/global.css';
+import '../../styles/global.css';
 
 function TopicSelection() {
   const [topics, setTopics] = useState([]);
@@ -17,7 +17,8 @@ function TopicSelection() {
 
   return (
     <div className={`topic-selection ${theme}`}>
-      <h2>Select a Topic</h2>
+    <h2 className='tocenter' >Select a Topic</h2>
+    <div className="topics">
       <div className="topic-list">
         {topics.map(topic => (
           <Link key={topic.name} to={`/quiz/${topic.name}`} className="topic-button">
@@ -25,6 +26,7 @@ function TopicSelection() {
           </Link>
         ))}
       </div>
+    </div>
     </div>
   );
 }

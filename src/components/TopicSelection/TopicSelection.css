@@ -1,16 +1,42 @@
 .topic-button {
+    /* margin-left: 50px; */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 100px;
+    width:300px;
+    margin-bottom: 10px;
     background-color: var(--card-light);
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 15px;
     font-size: 1.2em;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;  
     box-shadow: var(--shadow-light);
+  }
+  .topics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* max-width: 800px; */
+    /* flex-wrap: wrap; */
+    /* margin-top: 50px; */
+  }
+  .tocenter{
+    /* display: block; */
+    /* width: 100px;
+    margin: 0 auto; */
+    text-align: center;
+  }
+  
+  .topic-selection {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* gap: 20px; */
+    /* flex-wrap: wrap; */
+    margin-top: 50px;
   }
   
   .topic-button:hover {

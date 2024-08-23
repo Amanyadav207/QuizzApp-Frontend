@@ -2,7 +2,7 @@ import React, { useState, useEffect,useContext } from 'react';
 import axios from 'axios';
 import ThemeContext from '../../contexts/ThemeContext';
 import './AddQuestion.css';
-// import '../../styles/global.css';
+import '../../styles/global.css';
 
 function AddQuestion() {
   const [question, setQuestion] = useState({
@@ -123,7 +123,7 @@ function AddQuestion() {
             rows="3"
           />
         </div>
-
+  
         <div className="form-group">
           <label htmlFor="topic">Topic</label>
           <input
@@ -141,7 +141,7 @@ function AddQuestion() {
             ))}
           </datalist>
         </div>
-
+  
         <div className="form-group">
           <label htmlFor="question-type">Question Type</label>
           <select
@@ -155,37 +155,40 @@ function AddQuestion() {
             <option value="boolean">True/False</option>
           </select>
         </div>
-
-        <div className="options-container">
-          <label>Options</label>
-          {question.options.map((option, index) => (
-            <div key={index} className="option-item">
-              <input
-                type="text"
-                value={option.text}
-                onChange={(e) => handleOptionChange(index, 'text', e.target.value)}
-                placeholder={`Option ${index + 1}`}
-                className="input option-input"
-                disabled={question.type === 'boolean'}
-              />
-              <label className="checkbox-label">
+  
+        <div className="options-section">
+          <h3>Options</h3>
+          <div className="options-container">
+            {question.options.map((option, index) => (
+              <div key={index} className="option-item">
                 <input
-                  type={question.type === 'multiple' ? 'checkbox' : 'radio'}
-                  checked={option.isCorrect}
-                  onChange={(e) => handleOptionChange(index, 'isCorrect', e.target.checked)}
-                  name="correct-option"
+                  type="text"
+                  value={option.text}
+                  onChange={(e) => handleOptionChange(index, 'text', e.target.value)}
+                  placeholder={`Option ${index + 1}`}
+                  className="option-input"
+                  disabled={question.type === 'boolean'}
                 />
-                Correct
-              </label>
-            </div>
-          ))}
+                <label className="checkbox-label">
+                  <input
+                    type={question.type === 'multiple' ? 'checkbox' : 'radio'}
+                    checked={option.isCorrect}
+                    onChange={(e) => handleOptionChange(index, 'isCorrect', e.target.checked)}
+                    name="correct-option"
+                  />
+                  Correct
+                </label>
+              </div>
+            ))}
+          </div>
+          {question.type !== 'boolean' && question.options.length < 4 && (
+            <button type="button" onClick={addOption} className="button secondary">Add Option</button>
+          )}
         </div>
-
-        {question.type !== 'boolean' && question.options.length < 4 && (
-          <button type="button" onClick={addOption} className="button secondary">Add Option</button>
-        )}
-        
-        <button type="submit" className="button primary">Add Question</button>
+  
+        <div className="button-container">
+          <button type="submit" className="button primary">Add Question</button>
+        </div>
       </form>
     </div>
   );
