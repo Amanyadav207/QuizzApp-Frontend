@@ -1,44 +1,71 @@
-/* src/components/Home/Home.module.css */
-
-
-.button:hover {
-  background-color: #357abd;
-}
 .home {
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 20px; /* Added padding for responsiveness */
+  background-color: var(--background-light);
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme .home {
+  background-color: var(--background-dark);
 }
 
 .home h1 {
-  font-size: 3em;
+  font-size: 2.5em; /* Reduced font size for better mobile experience */
   margin-bottom: 20px;
   color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+body.dark-theme .home h1 {
+  color: var(--primary-light);
 }
 
 .home p {
   font-size: 1.2em;
   margin-bottom: 30px;
   line-height: 1.6;
+  color: var(--text-light);
+  transition: color 0.3s ease;
 }
 
-body.dark-theme .home h1 {
-  color: var(--primary-dark);
+body.dark-theme .home p {
+  color: var(--text-dark);
 }
 
 button.start-quiz {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-radius: 50px;
   background-color: var(--primary-color);
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
 button.start-quiz:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-light);
 }
 
 body.dark-theme button.start-quiz {
   background-color: var(--primary-dark);
 }
 
-button.start-quiz:hover {
-  background-color: var(--secondary-dark);
+body.dark-theme button.start-quiz:hover {
+  background-color: var(--primary-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .home p {
+    font-size: 1em; /* Adjust font size for smaller screens */
+  }
+
+  button.start-quiz {
+    padding: 12px 25px; /* Adjust padding for smaller screens */
+  }
 }

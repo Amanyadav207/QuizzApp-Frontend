@@ -1,17 +1,21 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import ThemeContext from '../../contexts/ThemeContext';
 import './TopicSelection.css';
 import '../../styles/global.css';
+import axiosInstance from '../../config/axoisInstance';
 
 function TopicSelection() {
   const [topics, setTopics] = useState([]);
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
-    axios.get('/api/topics')
-      .then(response => setTopics(response.data))
+    axiosInstance.get('/topics')
+    .then(response => {
+      console.log('Fetched topics:', response.data);
+      setTopics(response.data);
+    })
       .catch(error => console.error('Error fetching topics:', error));
   }, []);
 

@@ -7,6 +7,8 @@ import Quiz from './components/Quiz/Quiz';
 import AddQuestion from './components/AddQuestion/AddQuestion';
 import PerformanceSummary from './components/PerformanceSummary/PerformanceSummary';
 import './App.css';
+// import dotenv from 'dotenv';
+// dotenv.config();
 import "./styles/global.css";
 
 function App() {
@@ -39,5 +41,7 @@ function App() {
     </ThemeContext.Provider>
   );
 }
-
+console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+console.log('All env variables:', process.env);
+console.log('Environment:', process.env.NODE_ENV);
 export default App;

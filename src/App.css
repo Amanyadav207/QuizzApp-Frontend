@@ -1,9 +1,6 @@
 .app {
   font-family: 'Arial', sans-serif;
-  /* max-width: 1200px; */
   margin: 0 auto;
-  
-  /* padding: 20 px; */
   min-height: 100vh;
   box-shadow: var(--shadow-light);
   background-color: var(--background-light);
@@ -14,4 +11,12 @@
 body.dark-theme .app {
   background-color: var(--background-dark);
   box-shadow: var(--shadow-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app {
+    box-shadow: none;
+    border-radius: 0;
+  }
 }

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import ThemeContext from '../../contexts/ThemeContext';
+import axiosInstance from '../../config/axoisInstance';
+// import ThemeContext from '../../contexts/ThemeContext';
 import './Quiz.css';
+// import axiosInstance from '../../config/axoisInstance';
 // import '../../styles/global.css';
 
 
@@ -14,10 +15,10 @@ function Quiz() {
   const [answered, setAnswered] = useState(false);
   const { topic } = useParams();
   const navigate = useNavigate();
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
-    axios.get(`/api/question/${topic}`)
+    axiosInstance.get(`/question/${topic}`)
       .then(response => setQuestions(response.data))
       .catch(error => console.error('Error fetching questions:', error));
   }, [topic]);
@@ -103,7 +104,7 @@ function Quiz() {
           </button>
         ))}
       </div>
-      <button onClick={handleSubmitAnswer} className="button primary hover-effect">Submit Answer</button>
+      <button onClick={handleSubmitAnswer} className="button primary hover-effect ">Submit Answer</button>
     </div>
   );
 }

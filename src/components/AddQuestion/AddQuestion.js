@@ -1,8 +1,9 @@
 import React, { useState, useEffect,useContext } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import ThemeContext from '../../contexts/ThemeContext';
 import './AddQuestion.css';
 import '../../styles/global.css';
+import axiosInstance from "../../config/axoisInstance";
 
 function AddQuestion() {
   const [question, setQuestion] = useState({
@@ -19,7 +20,7 @@ function AddQuestion() {
 
   useEffect(() => {
     // Fetch existing topics when component mounts
-    axios.get('/api/topics')
+    axiosInstance.get('/topics')
     .then(response => {
       // Ensure topics are stored as an array of strings
       const topicStrings = response.data.map(topic => 
@@ -57,7 +58,7 @@ function AddQuestion() {
       topic: question.topic.toLowerCase()
     };
 
-    axios.post('/api/question', normalizedQuestion)
+    axiosInstance.post('/question', normalizedQuestion)
       .then(() => {
         setMessage('Question added successfully');
         setQuestion({

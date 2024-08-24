@@ -117,3 +117,28 @@ body.dark-theme button.secondary:hover {
   color: var(--secondary-dark);
   border-color: var(--secondary-dark);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .performance-summary h2 {
+    font-size: 2.5em; /* Adjust font size for smaller screens */
+  }
+
+  .score {
+    font-size: 4em; /* Adjust font size for smaller screens */
+  }
+
+  .score-details {
+    font-size: 1.1em; /* Adjust font size */
+  }
+
+  .action-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+
+  button.primary,
+  button.secondary {
+    padding: 12px 25px; /* Adjust padding for smaller screens */
+  }
+}
