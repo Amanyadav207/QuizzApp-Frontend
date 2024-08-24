@@ -88,20 +88,22 @@ function Quiz() {
           style={{width: `${((currentQuestion + 1) / questions.length) * 100}%`}}
         ></div>
       </div>
+
       <h2>Question {currentQuestion + 1} of {questions.length}</h2>
+      <p className="question-type">{`Question Type: ${question.type === 'multiple' ? 'Multiple Correct' : question.type === 'single' ? 'Single Correct' : 'True/False'}`}</p>
       <p className="question-text">{question.text}</p>
       <div className="options-container">
         {question.options.map((option, index) => (
           <button 
             key={index} 
             onClick={() => handleOptionToggle(index)}
-            className={`option-button ${getButtonClass(index)}`}
+            className={`option-button ${getButtonClass(index)} `}
           >
             {option.text}
           </button>
         ))}
       </div>
-      <button onClick={handleSubmitAnswer} className="button primary">Submit Answer</button>
+      <button onClick={handleSubmitAnswer} className="button primary hover-effect">Submit Answer</button>
     </div>
   );
 }

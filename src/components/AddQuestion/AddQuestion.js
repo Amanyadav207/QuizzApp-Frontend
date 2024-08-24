@@ -182,12 +182,12 @@ function AddQuestion() {
             ))}
           </div>
           {question.type !== 'boolean' && question.options.length < 4 && (
-            <button type="button" onClick={addOption} className="button secondary">Add Option</button>
+            <button type="button" onClick={addOption} className="button secondary hover-effect">Add Option</button>
           )}
         </div>
   
         <div className="button-container">
-          <button type="submit" className="button primary">Add Question</button>
+          <button type="submit" className="button primary hover-effect">Add Question</button>
         </div>
       </form>
     </div>

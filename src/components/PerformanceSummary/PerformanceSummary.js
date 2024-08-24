@@ -4,7 +4,6 @@ import ThemeContext from '../../contexts/ThemeContext';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import './PerformanceSummary.css';
-// import '../../styles/global.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -27,8 +26,10 @@ function PerformanceSummary() {
     datasets: [
       {
         data: [score, totalQuestions - score],
-        backgroundColor: ['#4cc9f0', '#f72585'],
-        hoverBackgroundColor: ['#3db8df', '#e61474'],
+        backgroundColor: ['#2ecc71', '#ff2d2d'],
+        hoverBackgroundColor: ['#27ae60', '#d62626'],
+        borderWidth: 3,
+        borderColor: ['#27ae60', '#d62626'],
       },
     ],
   };
@@ -36,6 +37,18 @@ function PerformanceSummary() {
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'bottom',
+        labels: {
+          color: theme === 'dark' ? '#f5f5f5' : '#333',
+          font: {
+            size: 14,
+          },
+        },
+      },
+    },
   };
 
   return (
@@ -50,8 +63,8 @@ function PerformanceSummary() {
           <Pie data={chartData} options={chartOptions} />
         </div>
         <div className="action-buttons">
-          <button onClick={() => navigate('/topics')} className="button primary">Try Another Quiz</button>
-          <button onClick={() => navigate('/')} className="button secondary">Back to Home</button>
+          <button onClick={() => navigate('/topics')} className="button primary hover-effect">Try Another Quiz</button>
+          <button onClick={() => navigate('/')} className="button secondary hover-effect">Back to Home</button>
         </div>
       </div>
     </div>

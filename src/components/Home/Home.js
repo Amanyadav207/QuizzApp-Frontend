@@ -15,8 +15,8 @@ function Home() {
         <p>Challenge yourself with our diverse range of quizzes. Learn, compete, and have fun!</p>
         
         <div className="button-container1">
-          <Link to="/topics" className="button primary">Start Quiz</Link>
-          <Link to="/add-question" className="button secondary">Add Question</Link>
+          <Link to="/topics" className="button primary hover-effect">Start Quiz</Link>
+          <Link to="/add-question" className="button secondary hover-effect">Add Question</Link>
         </div>
         <div className="features">
           <div className="feature">

@@ -55,7 +55,7 @@ body.dark-theme .question-text {
   border-radius: 10px;
   font-size: 1.2em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
   background-color: var(--card-light);
   color: var(--text-light);
 }
@@ -81,11 +81,32 @@ body.dark-theme .option-button:hover {
 .option-button.correct {
   background-color: #4CAF50;
   border-color: #45A049;
+  color: white;
+  transition: none;
 }
 
- .option-button.incorrect {
+.option-button.correct:hover {
+  background-color: #45A049;
+}
+
+.option-button.incorrect {
   background-color: #F44336;
   border-color: #E53935;
+  color: white;
+  transition: none;
+}
+
+.option-button.incorrect:hover {
+  background-color: #E53935;
+}
+
+body.dark-theme .option-button.correct {
+  background-color: #4CAF50;
+  border-color: #45A049;
+}
+
+body.dark-theme .option-button.correct:hover {
+  background-color: #45A049;
 }
 
 body.dark-theme .option-button.incorrect {
@@ -93,18 +114,42 @@ body.dark-theme .option-button.incorrect {
   border-color: #E53935;
 }
 
-body.dark-theme .option-button.correct {
-  background-color: #4CAF50;
-  border-color: #45A049;
+body.dark-theme .option-button.incorrect:hover {
+  background-color: #E53935;
 }
+
 .option-button.selected {
   background-color: var(--primary-light);
   border-color: var(--primary-light);
   color: white;
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
 }
-body.dark-theme .option-button:hover,
-body.dark-theme .option-button.selected {
+
+body.dark-theme .option-button.selected,
+body.dark-theme .option-button.selected:hover {
   background-color: var(--primary-dark);
   border-color: var(--primary-dark);
   color: white;
+}
+
+body.dark-theme .option-button:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
+}
+
+.question-type {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+}
+
+body.dark-theme .question-type {
+  background-color: var(--primary-dark);
+  color: var(--text-dark);
 }
